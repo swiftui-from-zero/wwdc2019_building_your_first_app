@@ -8,21 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    var rooms : [Room] = []
+
     var body: some View {
-        List(0 ..< 5) { item in
-            Image(systemName: "photo")
-            VStack(alignment: .leading) {
-                Text("Rooms")
-                Text("20 people")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+        NavigationView {
+            List(rooms) { room in
+                RoomCell(room: room)
             }
+            .navigationTitle(Text("Rooms"))
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(rooms: testData)
+    }
+}
+
+struct RoomCell: View {
+    let room : Room
+    
+    var body: some View {
+        NavigationLink(
+            destination: Text(room.name)) {
+            Image(room.thumbnailName)
+                .cornerRadius(8)
+            VStack(alignment: .leading) {
+                Text(room.name)
+                Text("\(room.capacity) people")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
     }
 }
