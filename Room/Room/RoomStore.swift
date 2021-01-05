@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class RoomStore {
-    var rooms: [Room]
+class RoomStore: ObservableObject {
+    @Published var rooms: [Room]
     
     init(rooms: [Room] = []) {
         self.rooms = rooms
