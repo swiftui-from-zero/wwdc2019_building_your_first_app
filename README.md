@@ -2,7 +2,9 @@
 
 Here is a recreation of the "Room" app introduced in wwdc2019 [Introducing SwiftUI: Building Your First App](https://developer.apple.com/videos/play/wwdc2019/204/) using SwiftUI 2.0.
 
-<img src="img/preview.gif" width="300"/>
+<p align="center">
+    <img src="img/preview.gif" width="300"/>
+</p>
 
 ## Graphic Tutorial
 
